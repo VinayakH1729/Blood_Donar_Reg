@@ -15,13 +15,13 @@ class BloodDonorRegistrationApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Blood Donor Registration',
       theme: ThemeData(
-        primarySwatch: Colors.red,
+        primarySwatch: Colors.amber,
         inputDecorationTheme: InputDecorationTheme(
           border: OutlineInputBorder(
             borderRadius: BorderRadius.circular(12.0),
           ),
           filled: true,
-          fillColor: Colors.white,
+          fillColor: Color.fromARGB(255, 249, 249, 247),
         ),
       ),
       home: BloodDonorRegistrationForm(),
@@ -102,7 +102,10 @@ class _BloodDonorRegistrationFormState
       children: [
         Text(
           title,
-          style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+          style: TextStyle(
+              fontSize: 16,
+              fontWeight: FontWeight.bold,
+              color: Color.fromARGB(255, 7, 96, 205)),
         ),
         ...options.map((option) {
           return RadioListTile<String>(
@@ -110,7 +113,7 @@ class _BloodDonorRegistrationFormState
             value: option,
             groupValue: selectedOption,
             onChanged: onChanged,
-            activeColor: Colors.red,
+            activeColor: Color.fromARGB(255, 117, 37, 113),
           );
         }).toList(),
         SizedBox(height: 16),
@@ -126,7 +129,10 @@ class _BloodDonorRegistrationFormState
       children: [
         Text(
           label,
-          style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+          style: TextStyle(
+              fontSize: 16,
+              fontWeight: FontWeight.bold,
+              color: Color.fromARGB(255, 2, 103, 165)),
         ),
         SizedBox(height: 8),
         TextFormField(
@@ -153,15 +159,16 @@ class _BloodDonorRegistrationFormState
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+        backgroundColor: Color.fromARGB(255, 158, 54, 63),
         appBar: AppBar(
           title: Text(
             'Blood Donor Registration Form',
             style: TextStyle(color: Colors.white),
           ),
-          backgroundColor: Colors.red,
+          backgroundColor: Color.fromARGB(255, 119, 37, 126),
         ),
         body: Container(
-          color: Color(0xFFF5F5F5),
+          color: Color.fromARGB(255, 225, 197, 12),
           child: Padding(
             padding: EdgeInsets.all(16.0),
             child: Form(
@@ -224,7 +231,8 @@ class _BloodDonorRegistrationFormState
                         ),
                       ),
                       IconButton(
-                        icon: Icon(Icons.calendar_today, color: Colors.red),
+                        icon: Icon(Icons.calendar_today,
+                            color: Color.fromARGB(255, 120, 32, 128)),
                         onPressed: () => _selectDate(context),
                       ),
                     ],
@@ -247,7 +255,10 @@ class _BloodDonorRegistrationFormState
                   SizedBox(height: 16),
                   Text(
                     'Upload Blood donation photo (for activity points)',
-                    style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+                    style: TextStyle(
+                        fontSize: 16,
+                        fontWeight: FontWeight.bold,
+                        color: Color.fromARGB(255, 6, 115, 211)),
                   ),
                   Row(
                     children: [
@@ -259,7 +270,8 @@ class _BloodDonorRegistrationFormState
                         ),
                       ),
                       IconButton(
-                        icon: Icon(Icons.upload_file, color: Colors.red),
+                        icon: Icon(Icons.upload_file,
+                            color: Color.fromARGB(255, 121, 30, 128)),
                         onPressed: _pickImage,
                       ),
                     ],
